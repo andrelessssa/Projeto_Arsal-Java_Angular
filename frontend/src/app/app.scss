@@ -1,4 +1,6 @@
-@import "@angular/material/prebuilt-themes/indigo-pink.css";/* Garante que o container ocupe a tela toda no Windows do trabalho */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+
 .sidenav-container {
   height: 100vh;
 }
@@ -6,6 +8,7 @@
 .sidenav {
   width: 250px;
   border-right: 1px solid #e0e0e0;
+  background-color: #fafafa;
 }
 
 .sidenav-content-wrapper {
@@ -14,10 +17,39 @@
   height: 100%;
 }
 
-.spacer {
-  flex: 1 1 auto; /* Empurra os itens debaixo para o rodapé */
+.main-content {
+  padding: 24px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.main-content {
-  padding: 20px;
+
+.spacer {
+  flex: 1 1 auto; // Mágica do Flexbox que empurra o Login para o rodapé
+}
+
+
+.menu-item {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04); // Efeito visual ao passar o mouse
+  }
+}
+
+
+.menu-item {
+  &.icon-home mat-icon      { color: #4285f4 !important; }
+  &.icon-devedores mat-icon  { color: #34a853 !important; }
+  &.icon-relatorio mat-icon { color: #a00693 !important; }
+  &.icon-login mat-icon     { color: #ea4335 !important; }
+}
+
+.toolbar-menu-button {
+  color: white;
+  margin-right: 8px;
+}
+
+mat-toolbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); // Sombra para dar profundidade
 }
