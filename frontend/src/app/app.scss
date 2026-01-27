@@ -1,12 +1,23 @@
-
+@import "@angular/material/prebuilt-themes/indigo-pink.css";/* Garante que o container ocupe a tela toda no Windows do trabalho */
 .sidenav-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 100vh;
 }
 
 .sidenav {
-  width: 200px;
+  width: 250px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.sidenav-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto; /* Empurra os itens debaixo para o rodapé */
+}
+
+.main-content {
+  padding: 20px;
 }

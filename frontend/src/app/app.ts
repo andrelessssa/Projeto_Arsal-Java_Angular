@@ -6,6 +6,7 @@ import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',     // 🚨 ESSA LINHA DIZ: "Eu moro na tag <app-root>"
   standalone: true,        // 🚨 ESSA LINHA DIZ: "Eu sou independente"
