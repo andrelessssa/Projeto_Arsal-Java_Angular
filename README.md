@@ -26,4 +26,4 @@ Durante o desenvolvimento deste módulo, foram aplicados conceitos de:
 3. **Event Binding:** Comunicação entre Template (HTML) e Classe (TS).
 
 ---
-*Desenvolvido por André - Departamento de TI da ARSAL* 🏛️
+*Desenvolvido por André Lessa - Departamento de TI da ARSAL* 🏛️
