@@ -1,35 +1,48 @@
-.container {
+.main-card {
   margin: 20px;
-  background-color: white;
+  background: white;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.footer-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  background-color: #f9f9f9;
-  border-top: 1px solid #eee;
+.table-container {
+  max-height: 600px;
+  overflow: auto; // Ativa o scroll horizontal e vertical ↔️↕️
 }
 
-.year-selector {
-  width: 100px;
-  margin-top: 15px;
+table {
+  width: 100%;
 }
 
-/* Transformação das Bolinhas Verdes 🟢 */
+// Estilo para manter o nome fixo à esquerda 🏛️
+.mat-column-nome {
+  padding-left: 16px !important;
+  background-color: white;
+  min-width: 250px;
+  font-weight: normal !important;
+  border-right: 1px solid #ddd;
+}
+
+// Estilização das Bolinhas Verdes ARSAL 🟢
 ::ng-deep .round-checkbox {
   .mdc-checkbox__background {
     border-radius: 50% !important;
   }
   .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
-    background-color: #f82e20 !important;
-    border-color: #f82e20 !important;
+    background-color: #e62424 !important;
+    border-color: #e62424 !important;
   }
-  .mdc-checkbox__checkmark {
-    display: none !important; /* Remove o 'V' para ficar só a bola */
-  }
-  
+  .mdc-checkbox__checkmark { display: none !important; }
 }
+
+
+.footer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.year-selector { width: 180px; margin-top: 15px; }
