@@ -1,4 +1,47 @@
-<div style="padding: 20px; border: 2px dashed #34a853;">
-  <h2>📊 Área de Gestão de Devedores - ARSAL</h2>
-  <p>O componente foi carregado com sucesso! Pronto para criar a tabela.</p>
+<div class="mat-elevation-z8 container">
+  
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> NOME/RAZÃO SOCIAL </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+
+    @for (mes of meses; track mes) {
+      <ng-container [matColumnDef]="mes">
+        <th mat-header-cell *matHeaderCellDef> {{mes}} </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox 
+            class="round-checkbox" 
+            [(ngModel)]="inicializarAno(element)[mes]">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+    }
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div class="footer-controls">
+    <div class="year-paginator">
+      <mat-form-field appearance="outline" class="year-selector">
+        <mat-label>Ano de Referência</mat-label>
+        <mat-select [(ngModel)]="anoSelecionado">
+          @for (ano of anos; track ano) {
+            <mat-option [value]="ano">{{ano}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" class="add-btn" (click)="adicionarNovo()">
+      <mat-icon>add</mat-icon>
+      ADICIONAR NOVO
+    </button>
+  </div>
 </div>
